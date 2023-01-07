@@ -12,7 +12,7 @@
             "binaryDir": "${sourceDir}/build/llvm",
             "cacheVariables": {
                 "CMAKE_CXX_COMPILER": "clang++",
-                "CMAKE_CXX_FLAGS": "--target=armv7m-none-eabi -Wall -Wextra -pedantic -g -nostdlib",
+                "CMAKE_CXX_FLAGS": "--target=armv7m-none-eabi -Wall -Wextra -pedantic -g -nostdlib -fno-exceptions -fno-common",
                 "CMAKE_ASM_COMPILER": "clang",
                 "CMAKE_ASM_FLAGS": "--target=armv7m-none-eabi -Qunused-arguments",
                 "LD_FLAGS": "--ld-path=ld.lld"
