@@ -1,0 +1,28 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 16
+    },
+    "configurePresets": [
+        {
+            "name": "llvm",
+            "description": "LLVM toolchain with clang and lld",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/llvm",
+            "cacheVariables": {
+                "CMAKE_CXX_COMPILER": "clang++",
+                "CMAKE_CXX_FLAGS": "--target=armv7m-none-eabi -Wall -Wextra -pedantic -g -nostdlib",
+                "CMAKE_ASM_COMPILER": "clang",
+                "CMAKE_ASM_FLAGS": "--target=armv7m-none-eabi -Qunused-arguments",
+                "LD_FLAGS": "--ld-path=ld.lld"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "debug",
+            "configurePreset": "llvm"
+        }
+    ]
+}
